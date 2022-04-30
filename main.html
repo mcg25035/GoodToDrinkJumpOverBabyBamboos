@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>姑兔君跳竹筍</title>
+    <!--load script.js when whole page is onload-->
+    <script type="text/javascript" src="script.js" defer></script>
+    <style>
+      /* let body and html margin set to zero */
+      body, html {
+        margin: 0;
+        padding: 0;
+      }
+      canvas{
+        border: none;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <audio id="gtd_sound"></audio>
+    <audio id="die"></audio>
+    <audio id="bg_sound"></audio>
+    <!--make a canva id is game_rendering_area-->
+    <canvas id="game_rendering_area"></canvas>
+    <!--make a div float on game_rendering_area , size width 45% height 90% in center of screen-->
+    <div id="game_info" style="text-align:center;position:absolute;width:45%;height:90%;top:50%;left:50%;transform:translate(-50%,-50%);" hidden>
+      <!--make a white text "aaa"-->
+      <p style="color:white;font-family: Arial, Helvetica, sans-serif;font-size: 3vw;">！姑兔君被竹筍刺死了！</p>
+      <br>
+      <br>
+      <p id="score" style="color:white;font-family: Arial, Helvetica, sans-serif;">分數：{}分</p>
+      <p id="level" style="color:white;font-family: Arial, Helvetica, sans-serif;">等級：{}等</p>
+      <p style="color:white;font-family: Arial, Helvetica, sans-serif;">姑兔君：屁股好痛阿</p>
+      <input type="button" value="重新開始" onclick="location.reload()">
+      <input type="button" value="分享" onclick="share()">
+    </div>
+    
+    <script>
+      alert("版本:v1.0")
+      //get the canva
+      var canvas = document.getElementById("game_rendering_area");
+      //get the context
+      var context = canvas.getContext("2d");
+      //let canvas full the screen
+      canvas.width = window.innerWidth -1;
+      canvas.height = window.innerHeight -1;
+    </script>
+    
+  </body>
+</html>

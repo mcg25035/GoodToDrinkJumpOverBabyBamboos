@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>姑兔君跳竹筍</title>
+  </head>
+  <body style="position: fixed;">
+    <style>
+      body{
+        margin: 0;
+      }
+    </style>
+    <div style="position: absolute; width: 100%; height: 100%;">
+      <iframe id="content" src="./main.html" style="position:relative; border: 0; "></iframe>
+    </div>
+    <script>
+      //let content full the whole screen
+      document.getElementById("content").style.width = window.innerWidth;
+      document.getElementById("content").style.height = window.innerHeight;
+        //check if height bigger than width
+      if(window.innerHeight > window.innerWidth){
+          //flip body
+
+        document.getElementById("content").style.transform = "rotate(90deg)";
+        document.getElementById("content").style.transformOrigin = "top left";
+        document.getElementById("content").style.width =  window.innerHeight;
+        document.getElementById("content").style.height = window.innerWidth;
+        document.getElementById("content").style.left = document.getElementById("content").style.height;
+      }
+    </script>
+  </body>
+</html>
